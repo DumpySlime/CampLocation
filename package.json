@@ -1,17 +1,30 @@
 {
-  "author": "Brian To",
-  "dependencies": {
-    "ejs": "^3.1.10",
-    "express": "*",
-    "express-session": "^1.18.1",
-    "mongodb": "^6.10.0",
-    "mongoose": "^8.8.2"
-  },
-  "description": "Search campsite by filtering",
-  "engine": "node >= 10.0.0",
-  "name": "Campsite finder",
+  "name": "campsite-search",
+  "version": "1.0.0",
+  "description": "A web application to search for campsites based on various criteria.",
+  "main": "server.js",
   "scripts": {
-    "start": "node server"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "version": "0.0.1"
+  "keywords": [
+    "campsite",
+    "search",
+    "ejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "Brian To",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "ejs": "^3.1.6",
+    "mongodb": "^6.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
