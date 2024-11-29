@@ -1,0 +1,17 @@
+{
+  "author": "Brian To",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "*",
+    "express-session": "^1.18.1",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.2"
+  },
+  "description": "Search campsite by filtering",
+  "engine": "node >= 10.0.0",
+  "name": "Campsite finder",
+  "scripts": {
+    "start": "node server"
+  },
+  "version": "0.0.1"
+}
