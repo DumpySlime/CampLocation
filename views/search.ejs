@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campsite Search</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Campsite Search</h1>
+        <form action="/search" method="POST">
+            <div class="form-group">
+                <label for="name">Campsite Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter campsite name">
+            </div>
+            <div class="form-group">
+                <label for="size">Size</label>
+                <input type="text" class="form-control" name="size" id="size" placeholder="Enter size">
+            </div>
+            <div class="form-group">
+                <label for="toiletType">Toilet Type</label>
+                <input type="text" class="form-control" name="toiletType" id="toiletType" placeholder="Enter toilet type">
+            </div>
+            <div class="form-group">
+                <label for="scenery">Scenery</label>
+                <input type="text" class="form-control" name="scenery" id="scenery" placeholder="Enter scenery type">
+            </div>
+            <div class="form-group">
+                <label for="travelMethod">Travel Method</label>
+                <input type="text" class="form-control" name="travelMethod" id="travelMethod" placeholder="Enter travel method">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        <h2 class="mt-4">Results:</h2>
+        <ul class="list-group">
+            <% campsites.forEach(campsite => { %>
+                <li class="list-group-item">
+                    <h3><%= campsite.name %></h3>
+                    <p><strong>Address:</strong> <%= campsite.address %></p>
+                    <p><strong>Size:</strong> <%= campsite.size %></p>
+                    <p><strong>Facilities:</strong> <%= JSON.stringify(campsite.facility) %></p>
+                    <p><strong>Toilet Type:</strong> <%= campsite.toiletType %></p>
+                    <p><strong>Scenery:</strong> <%= campsite.scenery %></p>
+                    <p><strong>Travel Method:</strong> <%= campsite.travelMethod %></p>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+</body>
+</html>
