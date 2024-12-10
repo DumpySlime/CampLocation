@@ -1,3 +1,5 @@
+const bodyParser = require("body-parser");
+
 // JavaScript source code
 const express = required('express');
 const app = express();
@@ -15,16 +17,19 @@ const PORT = process.env.PORT || 5000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-
 async function main() {
     try {
         await mongoose.connect(uri);
         console.log('Mongoose Connected!');
     } catch (error) {
-        console.error('Mongoose connection error:')
+        console.error('Mongoose connection error:', error)
     }
-    await client.connect();
-    console.log('Client Connected')
+    try {
+        await client.connect();
+        console.log('Client Connected!')
+    } catch (error) {
+        console.error('Client connection error:', error)
+    }
 }
 
 const server = app.listen(PORT, () => {
